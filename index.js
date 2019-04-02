@@ -1,16 +1,22 @@
 var express = require('express');
 var socket = require('socket.io');
+var path = require('path');
 
 var port = process.env.port || 3000
 
 
 var app = express();
+
+app.use(express.static(path.join(__dirname, './design'), { maxAge: 86400000 }));
+
+
+app.get('/', function(req, res) {
+    res.sendfile(path.join(__dirname, './design/index.html'));
+  });
+
 var server = app.listen(port, function(){
-    console.log('Listening to requests on port 3000');
+    console.log('Listening to requests on port '+ port);
 });
-
-app.use(express.static('design'));
-
 
 var io = socket(server);
 
