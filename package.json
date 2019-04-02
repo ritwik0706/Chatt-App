@@ -1,6 +1,9 @@
 {
   "name": "chatt-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.6.0"
+  },
   "description": "just trying to learn socket.io",
   "main": "index.js",
   "scripts": {

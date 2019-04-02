@@ -2,7 +2,7 @@ var express = require('express');
 var socket = require('socket.io');
 var path = require('path');
 
-var port = process.env.port
+var port = process.env.PORT || 8080
 
 
 var app = express();
